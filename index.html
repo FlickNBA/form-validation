@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FNBA Form</title>
+<script defer src="runtime.bundle.js"></script><script defer src="main.bundle.js"></script></head>
+
+<body>
+
+    <form>
+
+        <div>
+            <div>
+                <label for="mailOne">Type in your Email address:</label>
+                <input type="email" id="mailOne" name="mailOne" required />
+                <div class="good"></div>
+            </div>
+            <span class="error" aria-live="polite"></span>
+        </div>
+
+        <div>
+            <div>
+                <label for="mailTwo">Type in your brother Email address:</label>
+                <input type="email" id="mailTwo" name="mailTwo" required />
+                <div class="good"></div>
+            </div>
+            <span class="error" aria-live="polite"></span>
+        </div>
+
+        <div>
+            <div>
+                <label for="country">Type in your country (must be EU):</label>
+                <input type="text" id="country" name="country" />
+                <div class="good"></div>
+            </div>
+            <span class="error" aria-live="polite"></span>
+        </div>
+
+        <div>
+            <div>
+                <label for="zip">Type in your ZIP code:</label>
+                <input type="text" id="zip" name="zip" />
+                <div class="good"></div>
+            </div>
+            <span class="error" aria-live="polite"></span>
+        </div>
+
+        <div>
+            <div>
+                <label for="passOne">Type in your password:</label>
+                <input type="password" id="passOne" name="passOne" />
+                <div class="good"></div>
+            </div>
+            <span class="error" aria-live="polite"></span>
+        </div>
+
+        <div>
+            <div>
+                <label for="passTwo">Type in your password again:</label>
+                <input type="password" id="passTwo" name="passTwo" />
+                <div class="good"></div>
+            </div>
+            <span class="error" aria-live="polite"></span>
+        </div>
+
+        <button>Submit</button>
+
+    </form>
+
+</body>
+
+</html>
