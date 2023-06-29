@@ -1,29 +1,36 @@
 import "./reset.css";
 import "./index.css";
+import { getInputs } from "./getInputs";
+import { errorSizing } from "./errorSizing";
+import { showError } from "./showError";
+import { hideError } from "./hideError";
 
-// const form = document.querySelector("form");
+let inputs = getInputs();
 
-// const mail = document.getElementById("mail");
+errorSizing(inputs);
 
-// const country = document.getElementById("country");
+setTimeout(() => {
+  errorSizing(inputs);
+  document.querySelector("form").style["transition-duration"] = "1000ms";
+  document.querySelector("form").style.opacity = 1;
+}, 500);
 
-// const zip = document.getElementById("zip");
+inputs.forEach((input) => {
+  switch (input.type) {
+    case "email":
+      input.addEventListener("input", () => {
+        console.log("input mail");
+        if (input.validity.valid) {
+          hideError(input);
+        } else {
+          console.log(input);
+          showError(input, "FFS! Just give me", "dude.");
+        }
+      });
 
-// const passOne = document.getElementById("passOne");
-
-// const passTwo = document.getElementById("passTwo");
-
-// mail.addEventListener("input", (event) => {
-//   if (mail.validity.typeMismatch) {
-//     mail.setCustomValidity("Put in correct email address!");
-//     showError("#mail + span.error", "abc");
-//   } else {
-//     mail.setCustomValidity("");
-//   }
-// });
-
-// const showError = (selector, message) => {
-//   let element = document.querySelector(selector);
-//   element.textContent = message;
-//   element.className = "error active";
-// };
+      break;
+    default:
+      console.log("cos innego lolz");
+      break;
+  }
+});

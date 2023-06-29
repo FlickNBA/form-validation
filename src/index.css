@@ -16,16 +16,22 @@ body {
 
 form {
     text-align: center;
+    opacity: 0;
 }
 
 form > div {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
+    align-items: end;
 }
 
 form > div > div {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
 }
 
 form label {
@@ -34,10 +40,16 @@ form label {
     padding-right: 1rem;
 }
 
+.bbr-0 {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
 form input {
     font-weight: 300;
     font-size: 1.5rem;
-    border-radius: 0.25rem;
+    padding: 0.25rem;
+    border-radius: 0.5rem 0.5rem;
     flex-grow: 1;
 }
 
@@ -48,24 +60,38 @@ form button {
 }
 
 input:valid {
-    border: 1px solid green;
+    border: 1px solid #8ac926;
 }
 
 input:invalid {
-    border: 1px solid red;
+    border: 1px solid #ff595e;
 }
 
 .error {
-  width: 100%;
-  padding: 0;
-  font-size: 80%;
-  color: white;
-  background-color: red;
-  border-radius: 0 0 5px 5px;
-  box-sizing: border-box;
+    transition-duration: 1000ms;
+    font-size: 1.25rem;
+    color: white;
+    background-color: #ff595e;
+    border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .error.active {
     display: block;
-  padding: 0.3em;
+    padding: 0.3em;
+}
+
+.good {
+    transition-duration: 1000ms;
+    opacity: 0;
+    position: absolute;
+    background-color: #8ac926;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    height: 100%;
+    width: 4rem;
+    right: 0;
+}
+
+.good.active {
+    opacity: 1;
 }
