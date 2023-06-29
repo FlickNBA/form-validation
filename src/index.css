@@ -69,7 +69,7 @@ input:invalid {
 
 .error {
     transition-duration: 1000ms;
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: white;
     background-color: #ff595e;
     border-radius: 0 0 0.5rem 0.5rem;
